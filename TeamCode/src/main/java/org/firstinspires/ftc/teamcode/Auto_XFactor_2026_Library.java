@@ -19,26 +19,22 @@ public class Auto_XFactor_2026_Library extends LinearOpMode {
     /**
      * Describe this function...
      */
-    private void rahrahrah(int POWER, int POS) {
+    private void rahrahrah(double POWER, int POS) {
         LeftFront.setTargetPosition(POS);
-        LeftBack.setTargetPosition(POS);
+
         LeftFront.setPower(POWER);
-        LeftBack.setPower(POWER);
+
         LeftFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        LeftBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
         while (LeftFront.isBusy() || LeftBack.isBusy() || RightFront.isBusy() || RightBack.isBusy()) {
             telemetry.addData("LF", LeftFront.getCurrentPosition());
-            telemetry.addData("LB", LeftBack.getCurrentPosition());
+
             telemetry.update();
         }
         LeftFront.setPower(0);
-        LeftBack.setPower(0);
-        RightFront.setPower(0);
-        RightBack.setPower(0);
+
         LeftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        LeftBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        RightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        RightBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
         POS = 0;
         POWER = 0;
     }
@@ -111,7 +107,7 @@ public class Auto_XFactor_2026_Library extends LinearOpMode {
         BALLS_SHOOTING();
         RIGHT_TURN(0.5, 450);
         LEFT_GLIDE(0.5, 500);
-        Shooting.setPower(0);
+        Shooting.setPower(0);   
     }
 
     /**
@@ -154,7 +150,7 @@ public class Auto_XFactor_2026_Library extends LinearOpMode {
         waitForStart();
         if (opModeIsActive()) {
             // Put run blocks here.
-            rahrahrah(900, 5000);
+            rahrahrah(0.3, 5000);
         }
     }
 

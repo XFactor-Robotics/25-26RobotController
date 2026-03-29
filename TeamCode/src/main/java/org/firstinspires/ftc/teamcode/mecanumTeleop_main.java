@@ -19,7 +19,8 @@ public class mecanumTeleop_main extends LinearOpMode {
   private DcMotor TestShooter;
 
   /**
-   * Describe this function...
+   * Code should be very self-explanatory. Gets all the components, initialises them,
+   *
    */
   @Override
   public void runOpMode() {
