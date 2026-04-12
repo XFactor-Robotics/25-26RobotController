@@ -16,7 +16,7 @@ public class flywheelTuner extends OpMode {
     public DcMotorEx flywheelMotor2;
 
     double highVelocity = 1500;
-    double lowVelocity = 900;
+    double lowVelocity = 1200;
     double curTargetVelocity = highVelocity;
     double F = 0;
     double P = 0;
@@ -29,8 +29,9 @@ public class flywheelTuner extends OpMode {
 
     @Override
     public void init(){
-        flywheelMotor1 = hardwareMap.get(DcMotorEx.class, "Shooting");
-        flywheelMotor2 = hardwareMap.get(DcMotorEx.class, "Test Shooter");
+        flywheelMotor1 = hardwareMap.get(DcMotorEx.class, "RightShooter");
+        flywheelMotor2 = hardwareMap.get(DcMotorEx.class, "LeftShooter");
+        DcMotor Intake = hardwareMap.get(DcMotor.class, "Intake");
         flywheelMotor1.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         flywheelMotor2.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
