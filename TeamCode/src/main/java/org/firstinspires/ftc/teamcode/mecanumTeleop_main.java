@@ -2,7 +2,6 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -22,13 +21,6 @@ public class mecanumTeleop_main extends LinearOpMode {
   private DcMotorEx Intake, flywheelMotor1, flywheelMotor2;
   private Servo Hood;
 
-  // State tracking for the Stopper servo toggle
-  boolean isForward = false;
-  boolean lastButtonState = false;
-
-  double highVelocity = 1500;
-  double lowVelocity = 1000;
-  double curTargetVelocity;
 
   public void startShooter(double P, double I, double D, double F, double curTargetVelocity) {
 

@@ -2,8 +2,6 @@ package org.firstinspires.ftc.teamcode;
 
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.PIDFCoefficients;
 
 @Autonomous(name = "Red Alliance Wall Start")
 public class redAlliancePathTwo extends Auto_XFactor_2026_Library{

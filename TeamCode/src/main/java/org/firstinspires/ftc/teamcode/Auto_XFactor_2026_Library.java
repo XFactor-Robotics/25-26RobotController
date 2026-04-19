@@ -1,6 +1,5 @@
     package org.firstinspires.ftc.teamcode;
 
-    import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
     import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
     import com.qualcomm.robotcore.hardware.DcMotor;
     import com.qualcomm.robotcore.hardware.DcMotorEx;
@@ -16,10 +15,6 @@
         public DcMotor RightFront, RightBack, LeftFront, LeftBack;
         public DcMotorEx Intake, flywheelMotor1, flywheelMotor2;
         public Servo Hood;
-
-        // State tracking for the Stopper servo toggle
-        boolean isForward = false;
-        boolean lastButtonState = false;
 
         /**
          * Describe this function...
