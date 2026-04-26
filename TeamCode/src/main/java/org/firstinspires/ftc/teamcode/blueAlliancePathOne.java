@@ -19,27 +19,27 @@ public class blueAlliancePathOne extends Auto_XFactor_2026_Library{
             flywheelMotor2.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER, pidfCoefficients);
             startShooter(150, 0, 0, 13, 1000);
             // First set
-            FWD_BWD(.5, -1200);
+            FWD_BWD(.5, -1250);
             BALLS_SHOOTING();
             // Intake the second set
-            LEFT_TURN(.6, 360);
-            LEFT_GLIDE(0.5, 1270);
+            LEFT_TURN(.6, 400);
+            LEFT_GLIDE(0.5, 1100);
             Intake.setPower(1);
-            FWD_BWD(0.4, 1100);
+            FWD_BWD(0.4, 1000);
             Intake.setPower(0.4);
             // Shoot the second set
             DIAGONAL_LEFT_FB(-.8, -1920);
             RIGHT_TURN(.6, 450);
             BALLS_SHOOTING();
             // Go for the third set
-            LEFT_TURN(0.6, 470);
+            LEFT_TURN(0.6, 500);
             LEFT_GLIDE(0.5, 2045);
             Intake.setPower(1);
             FWD_BWD(0.4, 1000);
             Intake.setPower(0.4);
             startShooter(180, 0, 0, 13, 1100);
             Hood.setPosition(.65);
-            DIAGONAL_LEFT_FB(-1, -3450);
+            DIAGONAL_LEFT_FB(-1, -3550);
             RIGHT_TURN(1, 430);
             BALLS_SHOOTING();
         }

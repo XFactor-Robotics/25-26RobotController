@@ -11,7 +11,7 @@ public class redAlliancePathTwo extends Auto_XFactor_2026_Library{
         initHardware();
         waitForStart();
         if (opModeIsActive()){
-            startShooter(241, 0, 0, 13, 1450);
+            startShooter(241, 0, 0, 13, 1425);
             // First section, moves from the back to fire off the balls
             Hood.setPosition(1);
             //        sleep(2000);
@@ -20,12 +20,12 @@ public class redAlliancePathTwo extends Auto_XFactor_2026_Library{
             RIGHT_TURN(.5, 230);
             BALLS_SHOOTING();
             FWD_BWD(.5,920);
-            RIGHT_TURN(.5, 735);
+            RIGHT_TURN(.5, 750);
             Intake.setPower(1);
             FWD_BWD(.4, 1400);
             Intake.setPower(.4);
             FWD_BWD(-.5, -1400);
-            LEFT_TURN(.5, 750);
+            LEFT_TURN(.5, 700);
             FWD_BWD(-.5, -920);
             BALLS_SHOOTING();
             Hood.setPosition(0);

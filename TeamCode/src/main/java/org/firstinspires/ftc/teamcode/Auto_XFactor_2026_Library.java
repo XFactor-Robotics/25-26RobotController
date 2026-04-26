@@ -108,10 +108,12 @@
 
 
         void BALLS_SHOOTING() {
-            Stopper.setPosition(.33);
+            Stopper.setPosition(.4);
             sleep(150);
             Intake.setPower(0.5);
             sleep(2000);
+            Intake.setPower(1);
+            sleep(500);
             Intake.setPower(0.4);
             Stopper.setPosition(0);
         }
@@ -161,9 +163,6 @@
             telemetry.update();
         }
 
-        /**
-         * Describe this function...
-         */
 
         void FWD_BWD(double POWER, int POS) {
             LeftFront.setTargetPosition(POS);

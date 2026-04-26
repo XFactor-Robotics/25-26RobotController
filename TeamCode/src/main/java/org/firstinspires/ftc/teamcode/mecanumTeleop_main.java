@@ -118,7 +118,7 @@ public class mecanumTeleop_main extends LinearOpMode {
       //        isForward = false;
     } else if (gamepad2.right_bumper) {
       gamePad1();
-      Stopper.setPosition(.33);
+      Stopper.setPosition(.4);
       //      isForward = false;
     }
     // Mechanism Controls (Intake and Shooting)

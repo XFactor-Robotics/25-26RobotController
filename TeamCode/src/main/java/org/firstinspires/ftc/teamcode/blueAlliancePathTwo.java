@@ -20,11 +20,11 @@ public class blueAlliancePathTwo extends Auto_XFactor_2026_Library{
             LEFT_TURN(.5, 230);
             BALLS_SHOOTING();
             FWD_BWD(.5,920);
-            LEFT_TURN(.5, 735);
+            LEFT_TURN(.5, 758);
             Intake.setPower(1);
-            FWD_BWD(.4, 1400);
+            FWD_BWD(.4, 1500);
             Intake.setPower(.4);
-            FWD_BWD(-.5, -1400);
+            FWD_BWD(-.5, -1500);
             RIGHT_TURN(.5, 750);
             FWD_BWD(-.5, -920);
             BALLS_SHOOTING();
