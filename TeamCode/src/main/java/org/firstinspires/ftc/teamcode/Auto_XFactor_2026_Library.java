@@ -69,44 +69,6 @@
     //        sleep(2000);
         }
 
-        /**
-         * Describe this function...
-         */
-        private void RedAlliancePath1() {
-            Intake.setPower(.4);
-            PIDFCoefficients pidfCoefficients = new PIDFCoefficients(0,0,0,0);
-            flywheelMotor1.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER, pidfCoefficients);
-            flywheelMotor2.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER, pidfCoefficients);
-            startShooter(150, 0, 0, 13, 1000);
-            // First set
-            FWD_BWD(.5, -1200);
-            BALLS_SHOOTING();
-            // Intake the second set
-            RIGHT_TURN(.6, 460);
-            RIGHT_GLIDE(0.5, 1110);
-            Intake.setPower(1);
-            FWD_BWD(0.4, 1100);
-            Intake.setPower(0.4);
-            // Shoot the second set
-            DIAGONAL_RIGHT_FB(-.8, -1900);
-            LEFT_TURN(.6, 450);
-            Intake.setPower(0);
-            BALLS_SHOOTING();
-            // Go for the third set
-            RIGHT_TURN(0.6, 480);
-            RIGHT_GLIDE(0.5, 2020);
-            Intake.setPower(1);
-            FWD_BWD(0.4, 1000);
-            Intake.setPower(0.4);
-            startShooter(180, 0, 0, 13, 1100);
-            Hood.setPosition(.65);
-            DIAGONAL_RIGHT_FB(-1, -3500);
-            LEFT_TURN(1, 430);
-            Intake.setPower(0);
-            BALLS_SHOOTING();
-        }
-
-
         void BALLS_SHOOTING() {
             Stopper.setPosition(.4);
             sleep(150);
@@ -118,13 +80,6 @@
             Stopper.setPosition(0);
         }
 
-        /**
-         * This sample contains the bare minimum Blocks for any regular OpMode. The 3 blue
-         * Comment Blocks show where to place Initialization code (runs once, after touching the
-         * DS INIT button, and before touching the DS Start arrow), Run code (runs once, after
-         * touching Start), and Loop code (runs repeatedly while the OpMode is active, namely not
-         * Stopped).
-         */
 
         public void initHardware() {
             LeftFront = hardwareMap.get(DcMotor.class, "LeftFront");
@@ -136,9 +91,7 @@
             flywheelMotor1 = hardwareMap.get(DcMotorEx.class, "RightShooter");
             flywheelMotor2 = hardwareMap.get(DcMotorEx.class, "LeftShooter");
             Intake = hardwareMap.get(DcMotorEx.class, "Intake");
-
-
-            // Put initialization blocks here.
+            
             LeftFront.setPower(0);
             LeftBack.setPower(0);
             RightFront.setPower(0);
@@ -205,44 +158,6 @@
             Intake.setPower(0);
         }
 
-        /**
-         * Describe this function...
-         */
-        private void BlueAlliancePath1() {
-            Intake.setPower(.4);
-            PIDFCoefficients pidfCoefficients = new PIDFCoefficients(0,0,0,0);
-            flywheelMotor1.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER, pidfCoefficients);
-            flywheelMotor2.setPIDFCoefficients(DcMotor.RunMode.RUN_USING_ENCODER, pidfCoefficients);
-            startShooter(150, 0, 0, 13, 1000);
-            // First set
-            FWD_BWD(.5, -1200);
-            BALLS_SHOOTING();
-            // Intake the second set
-            LEFT_TURN(.6, 360);
-            LEFT_GLIDE(0.5, 1270);
-            Intake.setPower(1);
-            FWD_BWD(0.4, 1100);
-            Intake.setPower(0.4);
-            // Shoot the second set
-            DIAGONAL_LEFT_FB(-.8, -1920);
-            RIGHT_TURN(.6, 450);
-            BALLS_SHOOTING();
-            // Go for the third set
-            LEFT_TURN(0.6, 470);
-            LEFT_GLIDE(0.5, 2045);
-            Intake.setPower(1);
-            FWD_BWD(0.4, 1000);
-            Intake.setPower(0.4);
-            startShooter(180, 0, 0, 13, 1100);
-            Hood.setPosition(.65);
-            DIAGONAL_LEFT_FB(-1, -3450);
-            RIGHT_TURN(1, 430);
-            BALLS_SHOOTING();
-        }
-
-        /**
-         * Describe this function...
-         */
         void LEFT_TURN(double POWER, int POS) {
             LeftFront.setTargetPosition(POS * -1);
             LeftBack.setTargetPosition(POS * -1);
@@ -275,9 +190,6 @@
             POWER = 0;
         }
 
-        /**
-         * Describe this function...
-         */
         void RIGHT_TURN(double POWER, int POS) {
             LeftFront.setTargetPosition(POS);
             LeftBack.setTargetPosition(POS);
@@ -333,65 +245,6 @@
             LEFT_TURN(.5, 750);
         }
 
-    //    private void BALLS_SHOOTING() {
-    //        // FIRST BALL
-    //        sleep(1000);
-    //        Flicker.setPosition(0.75);
-    //        sleep(110);
-    //        Flicker.setPosition(0.01);
-    //        sleep(1500);
-    //        // SECOND BALL
-    //        Intake.setPower(-0.8);
-    //        sleep(1500);
-    //        Intake.setPower(0);
-    //        Flicker.setPosition(0.75);
-    //        sleep(110);
-    //        Flicker.setPosition(0.01);
-    //        sleep(1500);
-    //        // THIRD BALL
-    //        Intake.setPower(-0.8);
-    //        sleep(1500);
-    //        Intake.setPower(0);
-    //        Flicker.setPosition(0.75);
-    //        sleep(110);
-    //        Flicker.setPosition(0.01);
-    //        sleep(150);
-    //    }
-
-        /**
-         * Describe this function...
-         */
-    //    private void FWD_BWD_ADVANCE(double POWER, int POS) {
-    //        LeftFront.setTargetPosition(POS);
-    //        LeftBack.setTargetPosition(POS);
-    //        RightFront.setTargetPosition(POS);
-    //        RightBack.setTargetPosition(POS);
-    //        LeftFront.setPower(POWER);
-    //        LeftBack.setPower(POWER);
-    //        RightFront.setPower(POWER);
-    //        RightBack.setPower(POWER);
-    //        LeftFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-    //        LeftBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-    //        RightFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-    //        RightBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-    //        while (LeftFront.isBusy() || LeftBack.isBusy() || RightFront.isBusy() || RightBack.isBusy()) {
-    //            BALLS_SHOOTING();
-    //        }
-    //        LeftFront.setPower(0);
-    //        LeftBack.setPower(0);
-    //        RightFront.setPower(0);
-    //        RightBack.setPower(0);
-    //        LeftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-    //        LeftBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-    //        RightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-    //        RightBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-    //        POS = 0;
-    //        POWER = 0;
-    //    }
-
-        /**
-         * Describe this function...
-         */
         void LEFT_GLIDE(double POWER, int POS) {
             LeftFront.setTargetPosition(POS * -1);
             LeftBack.setTargetPosition(POS);
@@ -424,9 +277,6 @@
             POWER = 0;
         }
 
-        /**
-         * Describe this function...
-         */
         void RIGHT_GLIDE(double POWER, int POS) {
             LeftFront.setTargetPosition(POS);
             LeftBack.setTargetPosition(POS * -1);
